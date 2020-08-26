@@ -11,3 +11,155 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  background-color: #f9f9f9;
+  padding: 20px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: #f9f9f9;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.header-content {
+  padding: 0 8%;
+}
+
+.app-footer {
+  padding: 30px;
+  text-align: center
+}
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-area {
+  width: 20%;
+}
+
+.filter-options-wrapper {
+  text-align: center
+}
+
+.filter-content {
+  background: #FFF;
+  border-radius: 4px;
+  padding: 10px;
+  position: sticky;
+  top: 10px;
+}
+
+.filter-options {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2px 30px;
+}
+
+.result-area {
+  width: 80%;
+}
+
+.result-content {
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+
+.result-card {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.result-card .image-box img {
+  max-height: 150px;
+  width: 150px;
+}
+
+.result-card .image-box {
+  height: 200px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageLoader {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffffba;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageLoader img {
+  border-radius: 100%;
+}
+/* media queries */
+@media screen and (max-width: 699px) {
+  .page-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-area,
+  .result-area {
+    width: 100%
+  }
+
+  .result-content {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+  .page-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .filter-area {
+    width: 20%;
+  }
+
+  .result-area {
+    width: 80%
+  }
+
+  .filter-content {
+    position: sticky;
+    top: 10px;
+  }
+
+  .result-content {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* .page-container {
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+  } */
+}
