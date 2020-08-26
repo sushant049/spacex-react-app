@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SpaceX Launch Programs React Application project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
-## Available Scripts
+# Problem statement
+To develop a web application which loads all the SpaceX Launch Programs in the User Interface using external REST APIs provided.
+
+# Approach
+Approach to create this application are as follows :
+1. Firstly, setting up the project folder to store all the components, containers, pages and other services seperately.
+2. `react-redux` has been used to manage the application states from one single store.
+3. `redux-thunk` middleware was setup to call action creators that return a function instead of an action object.
+3.  `redux-sessionstorage` stores the states in browser session storage, using which we can easily fetch the application states across the application.
+4. External API calls have been mentioned in `externalServices.js` file under `src/services/` which are exported and used while calling redux actions. In order to prevent CORS issue while calling the APIs, `https://cors-anywhere.herokuapp.com/` URL was embedded before the actual API endpoint.
+5. There are three seperate action types which calls action for fetching all programs, fetch filtered results and to check app's loading state.
+6. The actions then dispatch payloads according to the action type used and updates the application state which contains app loading state `isLoading` and program list `programs`.
+---
+# Setup the project
+
+### Clone the project from the git repo
+```sh
+$ git clone https://github.com/sushant049/spacex-react-app.git .
+```
+
+### Install the required packages
+```sh
+$ npm install
+```
+
+----
+
+# Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
-
-Runs the app in the development mode.<br />
+### Run in development mode
+```sh
+$ npm start
+```
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+### Generate production ready build
+```sh
+$ npm run build
+```
+Creates a production build of the application under build folder
+
+
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `yarn test`
+---
+## Chrome LightHouse Reports
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Summary Report
+![Report Summary](reports/report-summary.jpg)
 
-### `yarn build`
+### Detailed Performance Report
+![Report Summary](reports/performance.jpg)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Detailed Accessibility Report
+![Report Summary](reports/accessibility.jpg)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Detailed SEO Report
+![Report Summary](reports/seo.jpg)
