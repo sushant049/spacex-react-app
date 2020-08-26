@@ -34,7 +34,7 @@ export const DisplayText = styled.span`
             case 'light': return css`color: #777;`;
             case 'primary': return css`color: #333;`;
             case 'secondary': default:
-                return css`color: ${typeof props.color === 'string' ? props.color : 'black'};`;
+                return css`color: ${typeof props.color === 'string' ? props.color : '#333'};`;
         }
     }}
 
@@ -44,6 +44,12 @@ export const DisplayText = styled.span`
             case 'center': return css`text-align: center;`;
             case 'left': return css`text-align: left;`;
             case 'right': return css`text-align:right`;
+        }
+    }}
+
+    ${props => {
+        switch(props.cursor) {
+            case "true": return css`cursor: pointer;`;
         }
     }}
 `;

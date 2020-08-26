@@ -101,7 +101,7 @@ class Filters extends Component {
           </div>
         </div>
         <hr/>
-        <DisplayText size="xsmall" variant="strong" onClick={()=>this.clearFilters()}>Clear Filters</DisplayText>
+        <DisplayText cursor="true" size="xsmall" variant="strong" onClick={()=>this.clearFilters()}>Clear Filters</DisplayText>
       </div>
     );
   }
