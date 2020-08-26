@@ -49,6 +49,45 @@ The page will reload if you make edits.
 You will also see any lint errors in the console.
 
 ---
+## Deployment to Heroku
+The application is hosted on Heroku using Heroku CLI and attaching react-app-buildpack while deployinng the code
+
+### Steps
+Here are the steps to deploy a create-react-app directly to Heroku :
+1. Install Heroku CLI and login
+````
+$ heroku login
+````
+2. Create a Heroku app and attach the create-react-app buildpack to it
+````
+$ heroku create spacex-app-sushant --buildpack https://github.com/mars/create-react-app-buildpack.git
+````
+
+3. Create a file `static.json` in the project root and add following contents
+
+````
+{
+  "root": "build/",
+  "clean_urls": false,
+  "routes": {
+    "/**": "index.html"
+  }
+}
+````
+4. Deploy your changes
+````
+$ git add .
+$ git commit -am "SpaceX Programs React Application"
+$ git push heroku master
+````
+
+5. View the deployed application
+````
+$ heroku open
+````
+
+
+---
 ## Chrome LightHouse Reports
 
 ### Summary Report
@@ -62,3 +101,7 @@ You will also see any lint errors in the console.
 
 ### Detailed SEO Report
 ![Report Summary](reports/seo.jpg)
+
+---
+
+Deployed application URL : https://spacex-app-sushant.herokuapp.com/
